@@ -2,9 +2,11 @@ def classify_mining_valleys(data):
     if data is None:
         raise ValueError("No geospatial data provided")
     
-    # Default clustering
     print("Starting classification...")
-    model = KMeans(n_clusters=3)
+    
+    # Upgraded to handle spatial density
+    import hdbscan
+    model = hdbscan.HDBSCAN(min_cluster_size=5)
     results = model.fit_predict(data)
+    
     return results
-
