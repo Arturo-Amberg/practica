@@ -1,2 +1,2 @@
 
-model = 'XGBoost'
+model = 'LightGBM'
